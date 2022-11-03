@@ -1,7 +1,13 @@
 import React from "react";
+import Layout from "../containers/Layout";
+import Login from "../containers/Login";
 
 function App() {
-  return <h1>Hola Mundo 2</h1>;
+  return (
+    <Layout>
+      <Login />
+    </Layout>
+  );
 }
 
 export default App;
