@@ -1,5 +1,7 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "../pages/Home";
+import NotFound from "../pages/NotFound";
 
 import Layout from "./../containers/Layout";
 import Login from "./../containers/Login";
@@ -10,10 +12,10 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/" element={<p>Home Page</p>} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/recovery-password" element={<RecoveryPassword />} />
-          <Route path="*" element={<p>404 Not Found</p>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </BrowserRouter>
