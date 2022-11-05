@@ -4,6 +4,7 @@ import "./../assets/styles/Login.scss";
 import yardSaleLogo from "./../assets/logos/logo_yard_sale.svg";
 import Input from "./../components/atoms/Input";
 import Label from "./../components/atoms/Label";
+import Button from "./../components/atoms/Button";
 
 function Login() {
   return (
@@ -35,11 +36,13 @@ function Login() {
             className="input-password"
           />
 
-          <input
+          <Button
             type="submit"
-            value="Confirm"
-            className="primary-button login-button"
-          />
+            className="login-button"
+            color="primary"
+          >
+            Confirm
+          </Button>
         </form>
       </div>
     </div>
