@@ -1,34 +1,37 @@
 import React from "react";
 import "./../assets/styles/Login.scss";
 
+import yardSaleLogo from "./../assets/logos/logo_yard_sale.svg";
+import Input from "./../components/atoms/Input";
+
 function Login() {
   return (
     <div className="login">
       <div className="form-container">
-        <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
+        <img src={yardSaleLogo} alt="logo" className="logo" />
 
         <h1 className="title">Create a new password</h1>
-        <p className="subtitle">Enter a new passwrd for yue account</p>
+        <p className="subtitle">Enter a new password for your account</p>
 
         <form action="/" className="form">
           <label htmlFor="password" className="label">
             Password
           </label>
-          <input
+          <Input
             type="password"
             id="password"
             placeholder="*********"
-            className="input input-password"
+            className="input-password"
           />
 
           <label htmlFor="new-password" className="label">
-            Password
+            Repeat password
           </label>
-          <input
+          <Input
             type="password"
             id="new-password"
             placeholder="*********"
-            className="input input-password"
+            className="input-password"
           />
 
           <input
