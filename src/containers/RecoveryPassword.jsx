@@ -1,7 +1,9 @@
 import React from "react";
+import "./../assets/styles/RecoveryPassword.scss";
+
 import logo from "./../assets/logos/logo_yard_sale.svg"
 import emailIcon from "./../assets/icons/email.svg";
-import "./../assets/styles/RecoveryPassword.scss";
+import Button from "./../components/atoms/Button";
 
 function RecoveryPassword() {
   return (
@@ -18,7 +20,7 @@ function RecoveryPassword() {
           <img src={emailIcon} alt="email" />
         </div>
 
-        <button className="primary-button login-button">Login</button>
+        <Button className="login-button" color="primary">Login</Button>
 
         <p className="resend">
           <span>Didn't receive the email?</span>
