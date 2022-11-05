@@ -4,8 +4,8 @@ import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 
 import Layout from "./../containers/Layout";
-import CreateNewPassword from "../containers/CreateNewPassword";
-import RecoveryPassword from "./../containers/RecoveryPassword";
+import CreateNewPassword from "../pages/CreateNewPassword";
+import RecoveryPassword from "./../pages/RecoveryPassword";
 
 function App() {
   return (
