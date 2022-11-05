@@ -3,6 +3,7 @@ import "./../assets/styles/Login.scss";
 
 import yardSaleLogo from "./../assets/logos/logo_yard_sale.svg";
 import Input from "./../components/atoms/Input";
+import Label from "./../components/atoms/Label";
 
 function Login() {
   return (
@@ -14,9 +15,9 @@ function Login() {
         <p className="subtitle">Enter a new password for your account</p>
 
         <form action="/" className="form">
-          <label htmlFor="password" className="label">
+          <Label htmlFor="password">
             Password
-          </label>
+          </Label>
           <Input
             type="password"
             id="password"
@@ -24,9 +25,9 @@ function Login() {
             className="input-password"
           />
 
-          <label htmlFor="new-password" className="label">
+          <Label htmlFor="new-password">
             Repeat password
-          </label>
+          </Label>
           <Input
             type="password"
             id="new-password"
