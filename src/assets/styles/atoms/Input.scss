@@ -7,4 +7,16 @@
   height: 30px;
   font-size: $md;
   padding: 6px;
+
+  &--readonly {
+    outline: none;
+    cursor: initial;
+  }
+
+  &--plain-text {
+    background-color: transparent;
+    color: $very-light-pink;
+    font-family: $font-family;
+    padding: 6px 0;
+  }
 }

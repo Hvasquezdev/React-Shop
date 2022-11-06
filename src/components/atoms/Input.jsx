@@ -1,20 +1,35 @@
 import React from "react";
 import "./../../assets/styles/atoms/Input.scss";
 
+import { getStringFromObjectKeys } from "../../utils";
+
 function Input({
   placeholder = "",
   type = "text",
   className = "",
   value = "",
-  id = ""
+  id = "",
+  onChange,
+  readOnly = false,
+  plainText = false,
 }) {
+  const getClassNames = () =>
+    getStringFromObjectKeys({
+      "input--readonly": readOnly,
+      "input--plain-text": plainText,
+    });
+
+  const handleOnChange = (e) => (onChange ? onChange(e) : null);
+
   return (
     <input
       type={type}
       placeholder={placeholder}
-      defaultValue={value}
+      value={value}
       id={id}
-      className={`input ${className}`}
+      className={`input ${className} ${getClassNames()}`}
+      readOnly={readOnly}
+      onChange={handleOnChange}
     />
   );
 }
