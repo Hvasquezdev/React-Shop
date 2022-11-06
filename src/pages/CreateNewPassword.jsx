@@ -22,11 +22,13 @@ function CreateNewPassword() {
               <FormField
                 label="Password"
                 id="password"
+                inputType="password"
                 inputPlaceholder="*********"
               />
               <FormField
                 label="Repeat password"
                 id="new-password"
+                inputType="password"
                 inputPlaceholder="*********"
               />
             </>
