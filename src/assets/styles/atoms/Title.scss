@@ -1,0 +1,22 @@
+@import "./../variables";
+
+.title {
+  font-size: $lg;
+  color: $black;
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &--start {
+    text-align: start;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--end {
+    text-align: end;
+  }
+}
