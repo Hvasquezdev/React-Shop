@@ -7,12 +7,13 @@ function Button({
   className = "",
   color = "",
   outlined = false,
+  onClick,
 }) {
   const outlinedClass = outlined ? "-outlined" : "";
   const buttonColor = color ? `button--${color}${outlinedClass}` : "";
 
   return (
-    <button type={type} className={`button ${className} ${buttonColor}`}>
+    <button type={type} className={`button ${className} ${buttonColor}`} onClick={onClick}>
       {children}
     </button>
   );
