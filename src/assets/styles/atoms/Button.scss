@@ -10,9 +10,26 @@
   font-size: $md;
   font-weight: bold;
   height: 50px;
-
+  
   &--primary {
     background-color: $hospital-green;
     color: $white;
+  }
+
+  &--primary-outlined {
+    background-color: transparent;
+    color: $hospital-green;
+    border: 1px solid currentColor;
+  }
+  
+  &--link {
+    font-family: $font-family;
+    background-color: transparent;
+    color: $hospital-green;
+    font-size: $sm;
+    font-weight: 400;
+    height: auto;
+    padding: 6px 8px;
+    width: auto;
   }
 }
