@@ -10,6 +10,10 @@ function FormField({
   inputPlaceholder = "",
   inputType = "text",
   inputClassName = "",
+  value = "",
+  onChange,
+  readOnly = false,
+  plainText = false,
 }) {
   const fieldId = () => {
     if (id) return id;
@@ -17,6 +21,8 @@ function FormField({
 
     return label.split(" ").join("_");
   };
+
+  const handleOnChange = (e) => (onChange ? onChange(e) : null);
 
   return (
     <div className="form-field">
@@ -30,6 +36,10 @@ function FormField({
         id={fieldId()}
         placeholder={inputPlaceholder}
         className={`form-field__input ${inputClassName}`}
+        readOnly={readOnly}
+        plainText={plainText}
+        value={value}
+        onChange={handleOnChange}
       />
     </div>
   );
