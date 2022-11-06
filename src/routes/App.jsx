@@ -6,6 +6,7 @@ import NotFound from "../pages/NotFound";
 import Layout from "./../containers/Layout";
 import CreateNewPassword from "../pages/CreateNewPassword";
 import RecoveryPassword from "./../pages/RecoveryPassword";
+import Login from "../pages/Login";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/create-password" element={<CreateNewPassword />} />
           <Route path="/recovery-password" element={<RecoveryPassword />} />
           <Route path="*" element={<NotFound />} />
