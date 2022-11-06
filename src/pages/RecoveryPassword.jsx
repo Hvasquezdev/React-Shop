@@ -7,7 +7,7 @@ import Button from "./../components/atoms/Button";
 
 function RecoveryPassword() {
   return (
-    <div className="login">
+    <div className="recovery-password">
       <div className="form-container">
         <img src={logo} alt="logo" className="logo" />
 
