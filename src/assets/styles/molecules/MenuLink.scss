@@ -1,0 +1,17 @@
+@import "./../variables";
+
+.menu-link {
+  & > * {
+    font-weight: bold;
+    color: $black;
+    text-decoration: none;
+  }
+  
+  &--text-end {
+    text-align: end;
+  }
+
+  &--text-start {
+    text-align: start;
+  }
+}
