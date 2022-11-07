@@ -8,6 +8,7 @@ import CreateNewPassword from "../pages/CreateNewPassword";
 import RecoveryPassword from "./../pages/RecoveryPassword";
 import Login from "../pages/Login";
 import MyAccount from "../pages/MyAccount";
+import Products from "../pages/Products";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/create-password" element={<CreateNewPassword />} />
           <Route path="/recovery-password" element={<RecoveryPassword />} />
           <Route path="/my-account" element={<MyAccount />} />
+          <Route path="/products" element={<Products />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
