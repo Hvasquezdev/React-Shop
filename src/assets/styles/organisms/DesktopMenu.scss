@@ -1,0 +1,27 @@
+@import "./../variables";
+
+.desktop-menu {
+  width: 100px;
+  height: auto;
+  border: 1px solid $very-light-pink;
+  border-radius: 6px;
+  padding: 20px 20px 14px 20px;
+
+  &__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 20px;
+
+    .separator {
+      border-top: 1px solid $very-light-pink;
+    }
+
+    .button {
+      width: 100%;
+      padding-right: 0 !important;
+      text-align: right;
+    }
+  }
+}
