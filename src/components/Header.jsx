@@ -1,12 +1,18 @@
 import React from "react";
 import "./../assets/styles/Header.scss";
+
 import Logo from "./../assets/logos/logo_yard_sale.svg";
 import menuIcon from "./../assets/icons/icon_menu.svg";
 import shoppingCartIcon from "./../assets/icons/icon_shopping_cart.svg";
+import DesktopMenu from "./organisms/DesktopMenu";
 
 function Header() {
+  const [showMenu, setShowMenu] = React.useState(false);
+
+  const handleShowMenu = () => setShowMenu(!showMenu);
+
   return (
-    <nav>
+    <nav className="header">
       <img src={menuIcon} alt="menu" className="menu" />
 
       <div className="navbar-left">
@@ -36,13 +42,17 @@ function Header() {
 
       <div className="navbar-right">
         <ul>
-          <li className="navbar-email">platzi@example.com</li>
+          <li className="navbar-email" onClick={handleShowMenu}>
+            platzi@example.com
+          </li>
           <li className="navbar-shopping-cart">
             <img src={shoppingCartIcon} alt="shopping cart" />
             <div>2</div>
           </li>
         </ul>
       </div>
+
+      {showMenu && <DesktopMenu />}
     </nav>
   );
 }
