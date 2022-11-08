@@ -14,4 +14,16 @@
   &--text-start {
     text-align: start;
   }
+
+  &--text-sm {
+    font-size: $sm;
+  }
+
+  &--text-md {
+    font-size: $md;
+  }
+
+  &--text-lg {
+    font-size: $lg;
+  }
 }
