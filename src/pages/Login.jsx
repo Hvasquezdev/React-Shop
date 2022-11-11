@@ -6,8 +6,25 @@ import Form from "../components/molecules/Form";
 import FormContainer from "../components/atoms/FormContainer";
 import FormField from "../components/molecules/FormField";
 import Button from "../components/atoms/Button";
+import { getFormDataFromObject } from "../utils";
 
 function Login() {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!email || !password) return;
+
+    const form = getFormDataFromObject({ email, password });
+
+    console.log({
+      email: form.get("email"),
+      password: form.get("password"),
+    });
+  };
+
   return (
     <div className="login">
       <FormContainer className="form-container">
@@ -15,6 +32,7 @@ function Login() {
 
         <Form
           action="/"
+          onSubmit={handleSubmit}
           formFields={() => (
             <>
               <FormField
@@ -22,12 +40,16 @@ function Login() {
                 label="Email address"
                 inputType="email"
                 inputPlaceholder="email@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <FormField
                 id="password"
                 label="Password"
                 inputType="password"
                 inputPlaceholder="*********"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </>
           )}
