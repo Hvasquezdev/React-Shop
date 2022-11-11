@@ -1,0 +1,8 @@
+@import "./../variables";
+
+.base-card {
+  display: grid;
+  background-color: $text-input-field;
+  border-radius: 8px;
+  padding: 16px 24px;
+}
