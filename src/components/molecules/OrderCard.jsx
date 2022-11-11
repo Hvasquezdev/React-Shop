@@ -2,7 +2,7 @@ import React from "react";
 import "./../../styles/molecules/OrderCard.scss";
 
 import closeIcon from "./../../icons/icon_close.png";
-import Button from "../../../components/atoms/Button";
+import Button from "../atoms/Button";
 
 function OrderCard() {
   return (

@@ -3,7 +3,7 @@ import "./../../assets/styles/organisms/OrdersSidebar.scss";
 
 import arrowIcon from "./../../assets/icons/flechita.svg";
 import BaseCard from "../atoms/BaseCard";
-import OrderCard from "../../assets/styles/molecules/OrderCard";
+import OrderCard from "../molecules/OrderCard";
 import Button from "../atoms/Button";
 
 function OrdersSidebar() {
