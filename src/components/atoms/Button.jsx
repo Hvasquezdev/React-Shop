@@ -1,4 +1,5 @@
 import React from "react";
+import { getStringFromObjectKeys } from "../../utils";
 import "./../../assets/styles/atoms/Button.scss";
 
 function Button({
@@ -8,12 +9,21 @@ function Button({
   color = "",
   outlined = false,
   onClick,
+  isIconButton = false,
 }) {
   const outlinedClass = outlined ? "-outlined" : "";
-  const buttonColor = color ? `button--${color}${outlinedClass}` : "";
+  const classNames = getStringFromObjectKeys({
+    [`button--${color}${outlinedClass}`]: color,
+    "button--outlined": outlined,
+    "button--icon-button": isIconButton,
+  });
 
   return (
-    <button type={type} className={`button ${className} ${buttonColor}`} onClick={onClick}>
+    <button
+      type={type}
+      className={`button ${className} ${classNames}`}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
