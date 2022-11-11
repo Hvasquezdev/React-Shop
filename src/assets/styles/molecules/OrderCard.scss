@@ -1,0 +1,28 @@
+@import "./../variables";
+
+.order-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 16px;
+  align-items: center;
+
+  &__media {
+    display: flex;
+  }
+
+  &__image {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  &__name {
+    color: $very-light-pink;
+  }
+
+  &__price {
+    font-size: $md;
+    font-weight: bold;
+  }
+}
