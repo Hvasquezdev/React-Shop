@@ -5,9 +5,11 @@ import Logo from "./../assets/logos/logo_yard_sale.svg";
 import menuIcon from "./../assets/icons/icon_menu.svg";
 import shoppingCartIcon from "./../assets/icons/icon_shopping_cart.svg";
 import DesktopMenu from "./organisms/DesktopMenu";
+import useAppContext from "../hooks/useAppContext";
 
 function Header() {
   const [showMenu, setShowMenu] = React.useState(false);
+  const { state } = useAppContext();
 
   const handleShowMenu = () => setShowMenu(!showMenu);
 
@@ -47,7 +49,9 @@ function Header() {
           </li>
           <li className="navbar-shopping-cart">
             <img src={shoppingCartIcon} alt="shopping cart" />
-            <div>2</div>
+            {state?.cart.length ? (
+              <div>{state.cart.length}</div>
+            ) : null}
           </li>
         </ul>
       </div>
