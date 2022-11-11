@@ -8,20 +8,23 @@ import CreateNewPassword from "../pages/CreateNewPassword";
 import RecoveryPassword from "./../pages/RecoveryPassword";
 import Login from "../pages/Login";
 import MyAccount from "../pages/MyAccount";
+import { AppProvider } from "../context/appContext";
 
 function App() {
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/create-password" element={<CreateNewPassword />} />
-          <Route path="/recovery-password" element={<RecoveryPassword />} />
-          <Route path="/my-account" element={<MyAccount />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
+      <AppProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/create-password" element={<CreateNewPassword />} />
+            <Route path="/recovery-password" element={<RecoveryPassword />} />
+            <Route path="/my-account" element={<MyAccount />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
+      </AppProvider>
     </BrowserRouter>
   );
 }
