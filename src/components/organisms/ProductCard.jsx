@@ -2,8 +2,11 @@ import React from "react";
 import "./../../assets/styles/organisms/ProductCard.scss";
 
 import cartIcon from "./../../assets/icons/bt_add_to_cart.svg";
+import Button from "../atoms/Button";
 
-function ProductCard({ product }) {
+function ProductCard({ product, onCartClick }) {
+  const handleCartClick = () => (onCartClick ? onCartClick(product) : null);
+
   return (
     <div className="product-card">
       <img
@@ -16,9 +19,13 @@ function ProductCard({ product }) {
           <p className="product-price">${product.price}</p>
           <p className="product-name">{product.title}</p>
         </div>
-        <figure className="product-info__media">
+        <Button
+          isIconButton
+          className="product-info__cart-button"
+          onClick={handleCartClick}
+        >
           <img src={cartIcon} alt="Cart" />
-        </figure>
+        </Button>
       </div>
     </div>
   );
