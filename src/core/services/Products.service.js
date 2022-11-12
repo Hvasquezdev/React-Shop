@@ -16,6 +16,10 @@ class ApiProductsService {
 
     return parsedResponse;
   }
+
+  getTotalAmount(products = []) {
+    return products.reduce((total, product) => total += product?.price || 0, 0);
+  }
 }
 
 export default ApiProductsService;
