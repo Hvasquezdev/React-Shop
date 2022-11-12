@@ -69,6 +69,12 @@
     justify-content: center;
     align-items: center;
   }
+
+  .order-sidebar {
+    position: absolute;
+    right: 0;
+    top: 60px;
+  }
 }
 @media (max-width: 640px) {
   .menu {

@@ -6,10 +6,12 @@ import menuIcon from "./../assets/icons/icon_menu.svg";
 import shoppingCartIcon from "./../assets/icons/icon_shopping_cart.svg";
 import DesktopMenu from "./organisms/DesktopMenu";
 import useAppContext from "../hooks/useAppContext";
+import OrdersSidebar from "./organisms/OrdersSidebar";
 
 function Header() {
   const [showMenu, setShowMenu] = React.useState(false);
-  const { state } = useAppContext();
+  const [showOrders, setShowOrders] = React.useState(false);
+  const { state, removeProductFromCart } = useAppContext();
 
   const handleShowMenu = () => setShowMenu(!showMenu);
 
@@ -47,16 +49,23 @@ function Header() {
           <li className="navbar-email" onClick={handleShowMenu}>
             platzi@example.com
           </li>
-          <li className="navbar-shopping-cart">
+          <li
+            className="navbar-shopping-cart"
+            onClick={() => setShowOrders(!showOrders)}
+          >
             <img src={shoppingCartIcon} alt="shopping cart" />
-            {state?.cart.length ? (
-              <div>{state.cart.length}</div>
-            ) : null}
+            {state?.cart.length ? <div>{state.cart.length}</div> : null}
           </li>
         </ul>
       </div>
 
       {showMenu && <DesktopMenu />}
+      {showOrders && (
+        <OrdersSidebar
+          products={state?.cart || []}
+          onRemove={removeProductFromCart}
+        />
+      )}
     </nav>
   );
 }
