@@ -14,9 +14,21 @@ const useInitialState = () => {
     });
   };
 
+  const removeProductFromCart = (productId) => {
+    const updatedCart = [...state.cart].filter(
+      (product) => product.id !== productId
+    );
+
+    setState({
+      ...state,
+      cart: updatedCart,
+    });
+  };
+
   return {
     state,
     addProductToCart,
+    removeProductFromCart,
   };
 };
 
